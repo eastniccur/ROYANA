@@ -1,0 +1,6 @@
+{
+  "name": "Royana Exports Ltd",
+  "description": "Premium agricultural and raw meat exporter serving the Middle East, EU, and Asia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
