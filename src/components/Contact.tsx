@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { MapPin, Phone, Mail, Building } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
+  // 1. Create a form reference for EmailJS to scan values
+  const formRef = useRef<HTMLFormElement>(null);
+  
+  // 2. Local submission status feedback for the user
+  const [status, setStatus] = useState<string>('');
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,10 +24,26 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, this would send the data to an API
-    console.log('Form submitted:', formData);
-    alert('Thank you for your inquiry. Our export team will contact you shortly.');
-    setFormData({ name: '', email: '', product: '', destination: '', message: '' });
+    setStatus('Sending inquiry...');
+
+    if (!formRef.current) return;
+
+    // 3. Connect to EmailJS SDK
+    // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_PUBLIC_KEY' with your dashboard keys
+    emailjs
+      .sendForm('service_59qk80e', 'template_7kh5g4a', formRef.current, {
+        publicKey: 'kIZvMXdo-_H1Fw3qy',
+      })
+      .then(
+        () => {
+          setStatus('Success! Your trade inquiry has been sent.');
+          // Clear form fields on clean submission
+          setFormData({ name: '', email: '', product: '', destination: '', message: '' });
+        },
+        (error) => {
+          setStatus(`Submission failed: ${error.text || 'Please check your connection.'}`);
+        }
+      );
   };
 
   return (
@@ -40,7 +63,9 @@ export default function Contact() {
           {/* Left Column: Form */}
           <div className="bg-stone-50 p-8 rounded-2xl border border-stone-200">
             <h4 className="text-2xl font-bold text-stone-900 mb-6">Trade Inquiry Form</h4>
-            <form onSubmit={handleSubmit} className="space-y-5">
+            
+            {/* Added formRef here */}
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
@@ -48,7 +73,7 @@ export default function Contact() {
                   <input 
                     type="text" 
                     id="name" 
-                    name="name" 
+                    name="name" // Used as dynamic variable inside your EmailJS Template email
                     required
                     value={formData.name}
                     onChange={handleChange}
@@ -61,7 +86,7 @@ export default function Contact() {
                   <input 
                     type="email" 
                     id="email" 
-                    name="email" 
+                    name="email" // Used as dynamic variable inside your EmailJS Template email
                     required
                     value={formData.email}
                     onChange={handleChange}
@@ -76,7 +101,7 @@ export default function Contact() {
                   <label htmlFor="product" className="block text-sm font-medium text-stone-700 mb-1">Product Category</label>
                   <select 
                     id="product" 
-                    name="product" 
+                    name="product" // Used as dynamic variable inside your EmailJS Template email
                     required
                     value={formData.product}
                     onChange={handleChange}
@@ -94,7 +119,7 @@ export default function Contact() {
                   <label htmlFor="destination" className="block text-sm font-medium text-stone-700 mb-1">Destination Market</label>
                   <select 
                     id="destination"
-                    name="destination" 
+                    name="destination" // Used as dynamic variable inside your EmailJS Template email
                     required
                     value={formData.destination}
                     onChange={handleChange}
@@ -113,7 +138,7 @@ export default function Contact() {
                 <label htmlFor="message" className="block text-sm font-medium text-stone-700 mb-1">Volume & Requirements</label>
                 <textarea 
                   id="message" 
-                  name="message" 
+                  name="message" // Used as dynamic variable inside your EmailJS Template email
                   required
                   rows={4}
                   value={formData.message}
@@ -129,6 +154,13 @@ export default function Contact() {
               >
                 Submit Trade Inquiry
               </button>
+
+              {/* Status Update Messages displayed cleanly under the submission button */}
+              {status && (
+                <p className={`text-sm font-semibold mt-3 text-center ${status.includes('Success') ? 'text-emerald-600' : status.includes('failed') ? 'text-rose-600' : 'text-stone-500'}`}>
+                  {status}
+                </p>
+              )}
             </form>
           </div>
 
