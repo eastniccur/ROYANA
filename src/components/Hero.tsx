@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Globe2, ShieldCheck, Ship } from 'lucide-react';
+import MEATS from './images/MEATS.webp';
 
 export default function Hero() {
   return (
@@ -69,7 +70,7 @@ export default function Hero() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-stone-200">
               <img 
-                src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1200" 
+                src={MEATS} 
                 alt="Premium agricultural products and logistics" 
                 className="w-full h-full object-cover"
               />
