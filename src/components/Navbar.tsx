@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react'; // Removed Leaf since we are using your image logo
+import { Menu, X } from 'lucide-react'; 
 import { motion, AnimatePresence } from 'motion/react';
 
-// OPTION A: If your logo is in your src/assets folder
 import Logo from './images/LOGO.webp'; // Adjust this path to match your folder structure
 
 export default function Navbar() {
@@ -47,7 +46,7 @@ export default function Navbar() {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4'
+        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-1.5' : 'bg-transparent py-2.5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,14 +56,13 @@ export default function Navbar() {
           <a 
             href="#home" 
             onClick={(e) => handleScrollToSection(e, '#home')}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 overflow-hidden focus:outline-none"
           >
             <img 
               src={Logo} 
               alt="Royana Exports Logo" 
-              // Adjusted height dynamics to offset the logo's white padding
-              className={`w-auto object-contain transition-all duration-300 ${
-                isScrolled ? 'h-18' : 'h-24'
+              className={`w-auto object-contain mix-blend-multiply transition-all duration-300 ${
+                isScrolled ? 'h-24 md:h-28' : 'h-28 md:h-32'
               }`} 
             />
           </a>

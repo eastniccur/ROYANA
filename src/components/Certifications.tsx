@@ -4,11 +4,11 @@ import { BadgeCheck, ShieldAlert } from 'lucide-react';
 
 export default function Certifications() {
   const certs = [
-    { name: "KEBS", full: "Kenya Bureau of Standards", desc: "Ensures compliance with national safety and quality requirements." },
-    { name: "KMC", full: "Kenya Meat Commission", desc: "Approved facility processing for high-grade raw meat exports." },
-    { name: "VETERINARY", full: "Certified Veterinary Cleared", desc: "Strict animal health and sanitary compliance for meat products." },
-    { name: "HALAL", full: "Halal Certified", desc: "100% compliant with Islamic dietary laws and slaughter procedures." },
-    { name: "HACCP", full: "Hazard Analysis Critical Control Point", desc: "International standard defining the requirements for effective food safety." }
+    { name: "KEBS", full: "Kenya Bureau of Standards", desc: "Monitors adherence to national quality, packaging, and safety benchmarks." },
+    { name: "KMC", full: "Kenya Meat Commission", desc: "Processed through accredited facilities meeting export-grade meat standards." },
+    { name: "VETERINARY", full: "State Veterinary Cleared", desc: "Rigorous sanitary and health inspections before export dispatch." },
+    { name: "HALAL", full: "Halal Certified", desc: "Strict adherence to Islamic dietary guidelines and certified slaughter protocols." },
+    { name: "HACCP", full: "Food Safety Standards", desc: "Structured hazard analysis and control procedures across our cold chain." }
   ];
 
   return (
@@ -20,10 +20,10 @@ export default function Certifications() {
         
         <div className="flex flex-col md:flex-row gap-12 items-center mb-16">
           <div className="md:w-1/2">
-            <h2 className="text-sm font-bold tracking-widest text-emerald-400 uppercase mb-2">Global Trust</h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold mb-6">Recognized Industry Certifications</h3>
+            <h2 className="text-sm font-bold tracking-widest text-emerald-400 uppercase mb-2">Compliance & Trust</h2>
+            <h3 className="text-3xl md:text-4xl font-extrabold mb-6">Recognized Standards & Accreditations</h3>
             <p className="text-emerald-100 text-lg leading-relaxed">
-              Royana Exports Ltd does not compromise on safety or quality. Our operations are fully accredited by leading national and international regulatory bodies, providing our global partners with absolute assurance and market access.
+              Royana Exports Ltd works strictly within established regulatory frameworks. Our supply chain operations align with national and international health standards to ensure seamless customs clearance and reliable product quality.
             </p>
           </div>
           
@@ -32,9 +32,9 @@ export default function Certifications() {
               <div className="flex items-start gap-4">
                 <ShieldAlert className="w-8 h-8 text-amber-500 shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-bold text-lg mb-2">Security & Verification</h4>
+                  <h4 className="font-bold text-lg mb-2">Traceability & Documentation</h4>
                   <p className="text-sm text-emerald-200">
-                    All export documentation features cryptographically secure verifiable tracking numbers to prevent fraud and ensure rapid customs clearance at destination ports.
+                    All export shipments carry official veterinary clearance certificates, batch tracking numbers, and regulatory seals required for international port inspections.
                   </p>
                 </div>
               </div>

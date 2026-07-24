@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Globe2, ShieldCheck, Ship } from 'lucide-react';
-import MEATS from './images/MEATS.webp';
+import GOATS from './images/GOATS.webp';
 
 export default function Hero() {
   return (
@@ -22,21 +22,17 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="max-w-2xl"
           >
-            {/* Added: Clear Company Name Just Above the Badge */}
-            <p className="text-stone-900 font-extrabold text-lg sm:text-xl tracking-wider uppercase mb-3">
-              Royana Exports Limited
-            </p>
-
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-sm font-semibold tracking-wide uppercase mb-6">
-              <Globe2 className="w-4 h-4" />
-              Global Agricultural Supply Chain
+            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6">
+              <Globe2 className="w-4 h-4 shrink-0" />
+              Global Halal Meat Supply Chain From Kenya
             </span>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-stone-900 tracking-tight leading-tight mb-6">
-              Premium Agricultural & <span className="text-emerald-700">Raw Meat Exports</span>
+              Premium <span className="text-emerald-700">Chilled & Frozen Halal Meat</span>
             </h1>
+            
             <p className="text-lg md:text-xl text-stone-600 mb-8 leading-relaxed">
-              Royana Exports Ltd delivers world-class agricultural commodities. From certified halal meat and exotic fruits to premium spices and nuts, we bridge the gap between rich harvests and global markets across the Middle East, EU, and Asia.
+              Royana Exports Ltd delivers premium chilled and frozen Halal meat from Kenya to global markets. Specializing in high-quality goat, mutton, and Dorper meat, we bridge the gap between rich livestock farming and international trade partners across the Middle East, EU, and Asia.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -52,11 +48,11 @@ export default function Hero() {
             <div className="flex flex-wrap gap-x-8 gap-y-4 items-center pt-6 border-t border-stone-200">
               <div className="flex items-center gap-2 text-stone-600 font-medium">
                 <Ship className="w-5 h-5 text-amber-600" />
-                <span>Shipping to ME, EU & Asia</span>
+                <span>Shipping to Gulf, EU & Asia</span>
               </div>
               <div className="flex items-center gap-2 text-stone-600 font-medium">
                 <ShieldCheck className="w-5 h-5 text-amber-600" />
-                <span>KEBS, HALAL & HACCP Certified</span>
+                <span>Licensed Halal & Vet Documentation</span>
               </div>
             </div>
           </motion.div>
@@ -70,26 +66,11 @@ export default function Hero() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-stone-200">
               <img 
-                src={MEATS} 
-                alt="Premium agricultural products and logistics" 
+                src={GOATS} 
+                alt="Kenyan livestock and high-quality Halal meat export operations" 
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <div className="absolute bottom-6 left-6 right-6 text-white">
-                <p className="font-semibold text-lg">Uncompromising Quality</p>
-                <p className="text-white/80 text-sm">Source-to-destination traceability</p>
-              </div>
-            </div>
-            
-            {/* Floating Badge */}
-            <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl flex items-center gap-4">
-              <div className="bg-emerald-100 p-3 rounded-full">
-                <ShieldCheck className="w-8 h-8 text-emerald-700" />
-              </div>
-              <div>
-                <p className="text-xs text-stone-500 font-bold uppercase tracking-wider">Certified</p>
-                <p className="text-stone-900 font-bold">100% Export Ready</p>
-              </div>
             </div>
           </motion.div>
 

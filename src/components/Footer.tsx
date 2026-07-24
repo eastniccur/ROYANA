@@ -23,11 +23,6 @@ export default function Footer() {
             Premium Global Agricultural Supply Chain.
           </div>
 
-          <div className="flex justify-center md:justify-end gap-6 text-sm">
-            <a href="#" className="hover:text-emerald-400 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-emerald-400 transition-colors">Terms of Trade</a>
-          </div>
-
         </div>
       </div>
     </footer>

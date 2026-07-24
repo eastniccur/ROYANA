@@ -1,23 +1,39 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Sprout, Snowflake, Scale } from 'lucide-react';
+
+
+import Goats from './images/GOATS.webp';
+import ProcessingImg from './images/PROCESSING.webp';
+import MarketsImg from './images/SKYLINE.webp';
+import ExportImg from './images/EXPORT.webp';
+
+interface Pillar {
+  title: string;
+  description: string;
+  image?: string;
+}
 
 export default function About() {
-  const features = [
+  const pillars: Pillar[] = [
     {
-      icon: <Sprout className="w-8 h-8 text-emerald-700" />,
-      title: "Source & Sustainability",
-      description: "Our origin is deeply rooted in sustainable farming practices. We partner directly with vetted agricultural communities and trusted farms to ensure ethical sourcing, optimal harvest conditions, and environmental stewardship from soil to shipment."
+      title: "1. Ethical Sourcing",
+      description: "We source healthy, premium goats, sheep, and Dorper livestock directly from vetted pastoral communities and licensed farming cooperatives across Kenya, ensuring natural grazing and full traceability.",
+      image: Goats,
     },
     {
-      icon: <Snowflake className="w-8 h-8 text-emerald-700" />,
-      title: "Global Logistics & Cold-Chain",
-      description: "Temperature integrity is non-negotiable. Our state-of-the-art cold-chain infrastructure guarantees that sensitive cargo like raw meat and fresh fruits maintain absolute peak freshness during transit to the Middle East, EU, and Asia."
+      title: "2. Certified Processing Partners",
+      description: "We collaborate exclusively with export-licensed abattoirs and facilities operating under strict Halal practices, HACCP guidelines, and veterinary supervision for hygienic slaughter and chilling.",
+      image: ProcessingImg,
     },
     {
-      icon: <Scale className="w-8 h-8 text-emerald-700" />,
-      title: "Uncompromising Compliance",
-      description: "We operate under the strictest international product standards. Every shipment is subject to rigorous quality control protocols, veterinary inspections, and sanitary verifications to exceed global import regulations."
+      title: "3. Target Markets",
+      description: "Our primary export channels serve wholesale importers, distributor networks, and commercial meat suppliers across the Middle East (GCC region), select EU destinations, and East Asia.",
+      image: MarketsImg,
+    },
+    {
+      title: "4. Full Export & Air Freight Services",
+      description: "We handle end-to-end export execution—including government health certificates, veterinary documentation, Halal certification, custom packaging, and temperature-controlled air freight.",
+      image: ExportImg,
     }
   ];
 
@@ -25,31 +41,47 @@ export default function About() {
     <section id="about" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-sm font-bold tracking-widest text-amber-600 uppercase mb-2">Our Foundation</h2>
-          <h3 className="text-3xl md:text-4xl font-extrabold text-stone-900 mb-6">Integrity at Every Stage of the Supply Chain</h3>
-          <p className="text-lg text-stone-600">
-            Royana Exports Ltd was built on the premise that global markets deserve uncompromising quality. We manage a complex, highly-regulated supply chain with absolute precision to deliver premium agricultural assets worldwide.
+          <h2 className="text-sm font-bold tracking-widest text-amber-600 uppercase mb-2">About Royana Exports</h2>
+          <h3 className="text-3xl md:text-4xl font-extrabold text-stone-900 mb-6">
+            Reliable Kenyan Halal Meat Supply
+          </h3>
+          <p className="text-lg text-stone-600 leading-relaxed">
+            Royana Exports Ltd connects Kenyan livestock producers with international buyers. We streamline the export process to deliver high-quality chilled and frozen Halal carcass and primal cuts under complete sanitary compliance.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-10">
-          {features.map((feature, index) => (
+        {/* 4 Pillars Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {pillars.map((pillar, index) => (
             <motion.div 
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-stone-50 p-8 rounded-2xl border border-stone-100 hover:shadow-lg transition-shadow"
+              className="bg-stone-50 rounded-2xl border border-stone-100 overflow-hidden hover:shadow-lg transition-shadow flex flex-col justify-between"
             >
-              <div className="bg-emerald-100/50 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                {feature.icon}
+              <div>
+                {/* Image Placeholder Slot (Renders if image prop is provided) */}
+                {pillar.image && (
+                  <div className="w-full h-44 overflow-hidden bg-stone-200">
+                    <img 
+                      src={pillar.image} 
+                      alt={pillar.title} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
+
+                <div className="p-6">
+                  <h4 className="text-xl font-bold text-stone-900 mb-3">{pillar.title}</h4>
+                  <p className="text-stone-600 text-sm leading-relaxed">
+                    {pillar.description}
+                  </p>
+                </div>
               </div>
-              <h4 className="text-xl font-bold text-stone-900 mb-4">{feature.title}</h4>
-              <p className="text-stone-600 leading-relaxed">
-                {feature.description}
-              </p>
             </motion.div>
           ))}
         </div>
