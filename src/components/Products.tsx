@@ -9,6 +9,8 @@ import MuttonMeat from './images/MuttonMeat.webp';
 import GoatMeat from './images/GoatMeat.webp';
 import DorperMeat from './images/DorperMeat.webp';
 import Carcasses from './images/Carcasses.webp';
+import Sheep from './images/Sheep.webp';
+import GMeat from './images/GMeat.webp';
 
 // Replace these image imports with suitable product photographs
 // when the corresponding images are available.
@@ -28,7 +30,7 @@ const meatProducts: Product[] = [
     name: 'Goat Meat',
     description:
       'Kenyan goat meat for international wholesale buyers, with chilled and frozen options subject to availability.',
-    image: GoatMeat,
+    image: GMeat,
     formats: ['Chilled', 'Frozen'],
     category: 'meat',
   },
@@ -37,7 +39,7 @@ const meatProducts: Product[] = [
     name: 'Mutton & Lamb',
     description:
       'Sheep meat products for importers, distributors, and commercial food suppliers.',
-    image: MuttonMeat,
+    image: Sheep,
     formats: ['Chilled', 'Frozen'],
     category: 'meat',
   },

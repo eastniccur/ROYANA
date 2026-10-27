@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Globe2, ShieldCheck, Ship } from 'lucide-react';
-import GOATS from './images/GOATS.webp';
+// import GOATS from './images/GOATS.webp';
+import HeroImg from './images/HeroImg.webp';
 
 export default function Hero() {
   return (
@@ -32,8 +33,9 @@ export default function Hero() {
             </h1>
             
             <p className="text-lg md:text-xl text-stone-600 mb-8 leading-relaxed">
-              Royana Exports Ltd delivers premium chilled and frozen Halal meat from Kenya to global markets. Specializing in high-quality goat, mutton, and Dorper meat, we bridge the gap between rich livestock farming and international trade partners across the Middle East, EU, and Asia.
-            </p>
+              <strong className="font-semibold text-stone-800">Royana Exports Limited</strong> supplies chilled and frozen halal meat, fresh fruits, nuts and spices from Kenya to importers, wholesalers, distributors and food-service buyers across the Middle East and other international markets. 
+              We work with buyers to deliver the right specifications, packaging and shipping arrangements for each order.  
+          </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <a href="#contact" className="inline-flex justify-center items-center bg-emerald-700 hover:bg-emerald-800 text-white px-8 py-3.5 rounded-full font-semibold transition-all shadow-lg shadow-emerald-200">
@@ -66,7 +68,7 @@ export default function Hero() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-stone-200">
               <img 
-                src={GOATS} 
+                src={HeroImg} 
                 alt="Kenyan livestock and high-quality Halal meat export operations" 
                 className="w-full h-full object-cover"
               />
