@@ -5,8 +5,6 @@ import { ArrowRight, Package, Snowflake, Leaf } from 'lucide-react';
 import SpicesImg from './images/SPICES.webp';
 import FruitsImg from './images/FRUITS.webp';
 import NutsImg from './images/NUTS.webp';
-import MuttonMeat from './images/MuttonMeat.webp';
-import GoatMeat from './images/GoatMeat.webp';
 import DorperMeat from './images/DorperMeat.webp';
 import Carcasses from './images/Carcasses.webp';
 import Sheep from './images/Sheep.webp';

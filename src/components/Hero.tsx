@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Globe2, ShieldCheck, Ship } from 'lucide-react';
-// import GOATS from './images/GOATS.webp';
 import HeroImg from './images/HeroImg.webp';
 
 export default function Hero() {
