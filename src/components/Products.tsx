@@ -27,7 +27,7 @@ const meatProducts: Product[] = [
     id: 'goat',
     name: 'Goat Meat',
     description:
-      'Kenyan goat meat for international wholesale buyers, with chilled and frozen options subject to availability.',
+      'Fresh, chilled and frozen goat meat options for importers, wholesalers and commercial food distributors. Explore available cuts, packaging formats and product specifications for your market.',
     image: GMeat,
     formats: ['Chilled', 'Frozen'],
     category: 'meat',
@@ -36,7 +36,7 @@ const meatProducts: Product[] = [
     id: 'mutton',
     name: 'Mutton & Lamb',
     description:
-      'Sheep meat products for importers, distributors, and commercial food suppliers.',
+      'A range of sheep meat products for wholesale and food-service buyers. Enquire about available cuts, carcass options, chilled or frozen supply, and bulk packaging.',
     image: Sheep,
     formats: ['Chilled', 'Frozen'],
     category: 'meat',
@@ -45,7 +45,7 @@ const meatProducts: Product[] = [
     id: 'dorper',
     name: 'Dorper Sheep Meat',
     description:
-      'Dorper sheep meat for wholesale buyers seeking quality meat products from Kenya.',
+      'Dorper sheep meat for commercial buyers seeking a defined product origin and supply specification. Request details on available cuts, packaging, storage formats and export requirements.',
     image: DorperMeat,
     formats: ['Chilled', 'Frozen'],
     category: 'meat',
